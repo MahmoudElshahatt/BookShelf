@@ -1,15 +1,14 @@
-package com.shahott.bookshelf.models
+package com.shahott.bookshelf.models.remote
 
 
 import com.squareup.moshi.Json
 import androidx.annotation.Keep
+import com.shahott.bookshelf.models.domain.DomainBooks
 
 @Keep
 data class Books(
     @field:Json(name = "items")
     val items: List<Item?>? = listOf(),
-    @field:Json(name = "kind")
-    val kind: String? = "", // books#volumes
     @field:Json(name = "totalItems")
     val totalItems: Int? = 0 // 576
 ) {
@@ -17,10 +16,6 @@ data class Books(
     data class Item(
         @field:Json(name = "id")
         val id: String? = "", // 2MV4CwAAQBAJ
-        @field:Json(name = "kind")
-        val kind: String? = "", // books#volume
-        @field:Json(name = "selfLink")
-        val selfLink: String? = "", // https://www.googleapis.com/books/v1/volumes/2MV4CwAAQBAJ
         @field:Json(name = "volumeInfo")
         val bookInfo: VolumeInfo? = VolumeInfo()
     ) {
@@ -72,3 +67,29 @@ data class Books(
         }
     }
 }
+
+
+/**
+ * Convert Network results to domain and database objects
+ */
+fun Books.Item.VolumeInfo.asDomainModel() = DomainBooks(
+    bookName = title ?: "",
+    desc = description?:"",
+    bookLanguage = language?:"en",
+    pageCount = pageCount?:0,
+    author = authors?.get(0) ?:"",
+    imageUrl = imageLinks?.thumbnail ?:""
+)
+
+
+//
+//fun NetworkVideoContainer.asDatabaseModel(): Array<DatabaseVideo> {
+//    return videos.map {
+//        DatabaseVideo(
+//            title = it.title,
+//            description = it.description,
+//            url = it.url,
+//            updated = it.updated,
+//            thumbnail = it.thumbnail)
+//    }.toTypedArray()
+//}

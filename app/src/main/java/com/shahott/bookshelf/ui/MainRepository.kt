@@ -1,7 +1,7 @@
 package com.shahott.bookshelf.ui
 
 import com.shahott.bookshelf.base.BaseRepository
-import com.shahott.bookshelf.models.Books
+import com.shahott.bookshelf.models.remote.Books
 import com.shahott.bookshelf.util.network.ResultWrapper
 import com.shahott.bookshelf.util.network.safeApiCall
 import javax.inject.Inject

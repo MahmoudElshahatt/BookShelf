@@ -9,4 +9,35 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="rounded50">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="rounded14">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">14%</item>
+    </style>
+
+    <style name="rounded28">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">28%</item>
+    </style>
+
+    <style name="rounded10">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="rounded8">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8%</item>
+    </style>
+
+    <style name="rounded16">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16%</item>
+    </style>
+
 </resources>
