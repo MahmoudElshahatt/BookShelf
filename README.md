@@ -16,6 +16,8 @@ Book Shelf is an innovative Android application that empowers users to explore a
 
 ## Cache Strategy
 
+<img src="https://github.com/MahmoudElshahatt/BookShelf/assets/79477855/c380bb3f-3e22-4d7e-849b-0adb65dde95f" width="700" height="700">
+
 ## Tech Stack
 
 Book Shelf is built using the following cutting-edge technologies:
