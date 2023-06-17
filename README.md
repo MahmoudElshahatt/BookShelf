@@ -32,7 +32,7 @@ Book Shelf is built using the following cutting-edge technologies:
 
 To experience the magic of Book Shelf, follow these steps:
 
-1. Clone the repository: git clone https://github.com/your-username/book-shelf.git
+1. Clone the repository: git clone `https://github.com/MahmoudElshahatt/BookShelf.git`
 2. Open the project in Android Studio.
 3. Build and run the app on your Android device or emulator.
 
