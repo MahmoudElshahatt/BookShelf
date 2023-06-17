@@ -1,10 +1,14 @@
 package com.shahott.bookshelf.di
 
+import android.content.Context
+import androidx.room.Room
+import com.shahott.bookshelf.data.local.room.BooksDatabase
 import com.shahott.bookshelf.data.remote.RemoteData
 import com.shahott.bookshelf.util.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -60,6 +64,16 @@ class DataModule {
     ): RemoteData {
         val api = retrofit.create(RemoteData::class.java)
         return api
+    }
+
+    @Provides
+    @Singleton
+    fun provideRoomDb(@ApplicationContext appContext: Context): BooksDatabase {
+        return Room.databaseBuilder(
+            appContext,
+            BooksDatabase::class.java,
+            "book-shelf-db"
+        ).build()
     }
 
 }

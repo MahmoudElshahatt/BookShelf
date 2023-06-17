@@ -3,6 +3,7 @@ package com.shahott.bookshelf.models.remote
 
 import com.squareup.moshi.Json
 import androidx.annotation.Keep
+import com.shahott.bookshelf.models.local.LocalBook
 import com.shahott.bookshelf.models.domain.DomainBooks
 
 @Keep
@@ -74,22 +75,19 @@ data class Books(
  */
 fun Books.Item.VolumeInfo.asDomainModel() = DomainBooks(
     bookName = title ?: "",
-    desc = description?:"",
-    bookLanguage = language?:"en",
-    pageCount = pageCount?:0,
-    author = authors?.get(0) ?:"",
-    imageUrl = imageLinks?.thumbnail ?:""
+    desc = description ?: "",
+    bookLanguage = language ?: "en",
+    pageCount = pageCount ?: 0,
+    author = authors?.get(0) ?: "",
+    imageUrl = imageLinks?.thumbnail ?: ""
 )
 
 
-//
-//fun NetworkVideoContainer.asDatabaseModel(): Array<DatabaseVideo> {
-//    return videos.map {
-//        DatabaseVideo(
-//            title = it.title,
-//            description = it.description,
-//            url = it.url,
-//            updated = it.updated,
-//            thumbnail = it.thumbnail)
-//    }.toTypedArray()
-//}
+fun Books.Item.VolumeInfo.asLocalDBModel() = LocalBook(
+    bookName = title ?: "",
+    desc = description ?: "",
+    bookLanguage = language ?: "en",
+    pageCount = pageCount ?: 0,
+    author = authors?.get(0) ?: "",
+    imageUrl = imageLinks?.thumbnail ?: ""
+)

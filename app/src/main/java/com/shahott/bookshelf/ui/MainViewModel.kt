@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shahott.bookshelf.models.domain.DomainBooks
-import com.shahott.bookshelf.models.remote.Books
 import com.shahott.bookshelf.models.remote.asDomainModel
 import com.shahott.bookshelf.util.network.ErrorResponse
 import com.shahott.bookshelf.util.network.ResultWrapper
@@ -63,10 +62,8 @@ class MainViewModel @Inject constructor(
         _generalError.value = error?.message ?: ""
     }
 
-    private fun showSuccess(booksRes: Books) {
-        _books.value = booksRes.items?.map {
-            it?.bookInfo?.asDomainModel()
-        }
+    private fun showSuccess(booksRes: List<DomainBooks>) {
+        _books.value = booksRes
         Log.e("ViewModel", _books.value.toString())
     }
 

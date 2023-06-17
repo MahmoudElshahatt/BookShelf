@@ -1,13 +1,14 @@
 package com.shahott.bookshelf.base
 
+import android.util.Log
+
 
 interface BaseCacheStrategy<Remote, Local, Extra> {
 
     companion object {
         private const val FIRST_PAGE = 1
         private const val PAGE_SIZE = 20
-        //private const val DELAY_TIME = 6 * 60 * 60 * 1000L // 6 hours
-        private const val DELAY_TIME =  3 * 1000L // 3 minutes
+        private const val DELAY_TIME = 3 * 60 * 60 * 1000L // 3 hours
     }
 
     suspend fun getFromCache(page: Int, pageSize: Int, extra: Extra): List<Local>
@@ -16,9 +17,9 @@ interface BaseCacheStrategy<Remote, Local, Extra> {
 
     suspend fun saveToCache(page: Int, pageSize: Int, data: List<Local>)
 
-    fun mapFromRemoteToLocal(remoteData: List<Remote>): List<Local>
+    fun mapFromRemoteToLocal(remoteData: Remote): List<Local>
 
-    suspend fun fetchFromRemote(page: Int, pageSize: Int, extra: Extra): List<Remote>
+    suspend fun fetchFromRemote(page: Int, pageSize: Int, extra: Extra): Remote
 
     suspend fun getLastSaveTime(): Long
 
@@ -54,7 +55,6 @@ interface BaseCacheStrategy<Remote, Local, Extra> {
         } else {
             cachedData
         }
-
 
     }
 }

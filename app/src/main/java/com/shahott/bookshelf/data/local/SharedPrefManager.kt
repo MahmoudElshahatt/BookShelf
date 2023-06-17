@@ -23,8 +23,8 @@ class SharedPrefManager @Inject constructor(
         return mSharedPref!!.getString(key, defValue)
     }
 
-    fun read(key: String?, defValue: Boolean): Boolean {
-        return mSharedPref!!.getBoolean(key, defValue)
+    fun read(key: String?, defValue: Long): Long {
+        return mSharedPref!!.getLong(key, defValue)
     }
 
     fun read(key: String?, defValue: Int): Int {
@@ -37,9 +37,9 @@ class SharedPrefManager @Inject constructor(
         prefsEditor.commit()
     }
 
-    fun write(key: String?, value: Boolean) {
+    fun write(key: String?, value: Long) {
         val prefsEditor = mSharedPref!!.edit()
-        prefsEditor.putBoolean(key, value)
+        prefsEditor.putLong(key, value)
         prefsEditor.commit()
     }
 

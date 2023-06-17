@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.shahott.bookshelf.R
 import com.shahott.bookshelf.databinding.BookItemBinding
 import com.shahott.bookshelf.models.domain.DomainBooks
@@ -26,6 +27,7 @@ class BooksAdapter() :
             Glide.with(itemView.context)
                 .load(book.imageUrl)
                 .fitCenter()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(R.drawable.ic_book)
                 .into(binding.imgBook)
 
