@@ -15,12 +15,7 @@ class SharedPrefManager @Inject constructor(
 
     companion object {
         private const val SHARED_PREFERENCES_NAME = "sh_chat_app"
-        const val NAME = "NAME"
         const val LAST_FETCH = "LAST_FETCH"
-    }
-
-    fun read(key: String?, defValue: String?): String? {
-        return mSharedPref!!.getString(key, defValue)
     }
 
     fun read(key: String?, defValue: Long): Long {
@@ -29,12 +24,6 @@ class SharedPrefManager @Inject constructor(
 
     fun read(key: String?, defValue: Int): Int {
         return mSharedPref!!.getInt(key, defValue)
-    }
-
-    fun write(key: String?, value: String?) {
-        val prefsEditor = mSharedPref!!.edit()
-        prefsEditor.putString(key, value)
-        prefsEditor.commit()
     }
 
     fun write(key: String?, value: Long) {

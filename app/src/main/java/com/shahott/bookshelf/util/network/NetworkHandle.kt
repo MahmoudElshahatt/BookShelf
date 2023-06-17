@@ -66,7 +66,6 @@ private fun convertErrorBody(throwable: HttpException): ErrorResponse? {
 fun getHttpErrorMessage(code: Int): String {
     val httpErrorType = when (code) {
         400 -> HttpErrorType.BadRequest("")
-        401 -> HttpErrorType.NotAuthorized
         403 -> HttpErrorType.Forbidden
         404 -> HttpErrorType.NotFound
         422 -> HttpErrorType.DataInvalid("")
@@ -82,9 +81,6 @@ fun getHttpErrorMessage(code: Int): String {
 sealed class HttpErrorType {
     @Keep
     data class BadRequest(val errorSignUp: String? = null) : HttpErrorType()
-
-    @Keep
-    object NotAuthorized : HttpErrorType()
 
     @Keep
     object Forbidden : HttpErrorType()
