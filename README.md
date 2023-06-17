@@ -14,6 +14,7 @@ Book Shelf is an innovative Android application that empowers users to explore a
 * Splash screen: Engage users from the moment they launch the app with an attractive splash screen.* 
 * Image loading with Glide: Effortlessly load and display book cover images with the powerful Glide library.
 
+## Cache Strategy
 
 ## Tech Stack
 
@@ -26,5 +27,13 @@ Book Shelf is built using the following cutting-edge technologies:
 * MVVM architecture: Well-structured and maintainable codebase.
 * Splash Screen: Create an engaging and visually appealing launch experience using the Splash Screen API.
 * Glide: Effortlessly load and display book cover images with optimized caching and memory management.
+
+## Installation
+
+To experience the magic of Book Shelf, follow these steps:
+
+1. Clone the repository: git clone https://github.com/your-username/book-shelf.git
+2. Open the project in Android Studio.
+3. Build and run the app on your Android device or emulator.
 
 
