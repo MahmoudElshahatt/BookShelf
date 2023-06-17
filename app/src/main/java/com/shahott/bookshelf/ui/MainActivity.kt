@@ -2,6 +2,7 @@ package com.shahott.bookshelf.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import com.shahott.bookshelf.R
@@ -36,9 +37,21 @@ class MainActivity : AppCompatActivity() {
             binding.progressBar.isVisible = isLoading
             binding.rvBooks.isVisible = !isLoading
         }
-        viewModel.books.observe(this) { domainBooks->
-           bookAdapter.submitList(domainBooks)
+        viewModel.books.observe(this) { domainBooks ->
+            bookAdapter.submitList(domainBooks)
         }
+        viewModel.networkError.observe(this) { noInternet ->
+            showErrorState("No Network Connection")
+        }
+        viewModel.generalError.observe(this) { generalError ->
+            showErrorState(generalError)
+        }
+    }
+
+    private fun showErrorState(errorMessage: String) {
+        binding.rvBooks.isVisible = false
+        binding.txtErrorState.text = errorMessage
+        binding.txtErrorState.isVisible = true
     }
 
 }
