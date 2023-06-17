@@ -15,9 +15,10 @@ ext {
     okhttp = "4.9.3"
     moshi = "2.9.0"
     glide = "4.14.2"
+    splash_screen = "1.0.0"
     fragment_version = "1.5.3"
     nav_version = "2.5.3"
-    hilt_version="2.44"
+    hilt_version = "2.44"
     room_version = "2.5.0"
 }
 

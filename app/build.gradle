@@ -73,5 +73,7 @@ dependencies {
     // Room db
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+    //Splash Screen 12
+    implementation "androidx.core:core-splashscreen:$splash_screen"
 
 }
