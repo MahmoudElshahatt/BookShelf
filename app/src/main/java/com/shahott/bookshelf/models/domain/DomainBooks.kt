@@ -8,9 +8,8 @@ data class DomainBooks(
     val bookLanguage: String,
     val pageCount: Int,
     val author: String,
-    val imageUrl: String,
-
-    ) {
+    val imageUrl: String
+) {
     val shortDescription: String
         get() = desc.smartTruncate(45)
 }
