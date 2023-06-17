@@ -4,7 +4,7 @@ Book Shelf is an innovative Android application that empowers users to explore a
 
 ## Key Features
 
-** Extensive collection of books sourced remotely: Access a diverse library of books right at your fingertips with just a few taps.
+* Extensive collection of books sourced remotely: Access a diverse library of books right at your fingertips with just a few taps.
 Intelligent caching with Room database: Seamlessly store book data locally, ensuring uninterrupted browsing even when offline or facing connectivity challenges.
 Automatic cache refresh: Book Shelf refreshes its cache every 3 hours, providing you with the latest book recommendations and information.
 User-friendly interface: Enjoy a smooth and intuitive navigation experience for effortless book discovery.
