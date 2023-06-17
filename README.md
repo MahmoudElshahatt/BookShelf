@@ -1,6 +1,6 @@
 # BookShelf
 
-Book Shelf is an innovative Android application that empowers users to explore and discover a vast collection of books.
+Book Shelf is an innovative Android application that empowers users to explore and discover a vast collection of software books.
 
 
 ## Key Features
